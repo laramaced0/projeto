@@ -1,0 +1,193 @@
+body {
+
+  /*
+  background-image: url(./bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  */
+
+  /*background: color image repeat position/size*/
+  background: url(./bg-mobile.jpg) no-repeat top center/cover;
+  font-family: inter;
+  
+}
+
+:root{ 
+  --text-color: white;
+  --bg-url: url(./bg-mobile.jpg);
+  --stroke-color: rgb(255, 255, 255, 0.5);
+  --surface-color:  rgb(255, 255, 255,0.05);
+  --surface-color-hover: rgb(0, 0, 0, 0.02);
+  --highlight-color: rgb(255, 255, 255, 0.02);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./bg-mobile-light.jpg);
+  --stroke-color: rgb(0, 0, 0, 0.5);
+  --surface-color: rgb(0, 0, 0, 0.05);
+  --surface-hover-color: rgb(0, 0, 0, 0.02);
+  --highlight-color: rgb(0, 0, 0, 0.02);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body{
+  background: var(--bg-url) no-repeat top center/cover;
+}
+body * {
+  font-family: "Open_Sans", sans-serif;
+  color: var(--text-color);
+}
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 24px 0;
+
+}
+/*profile*/
+#profile {
+text-align: center;
+padding: 24px;
+}
+
+#profile-username {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#profile-info {
+  text-align: center;
+  font-size: 16px;
+}
+#profile img{
+  width: 112px;
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+/*switch*/
+#switch {
+
+  position: relative;
+  width: 64px;
+  margin: 6px auto;
+
+
+}
+
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: none;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+
+
+}
+.light #switch button {
+  right: 50%;
+  left: initial;
+}
+#switch span {
+  display: block;
+  width: 62px;
+  height: 24px;
+  /* surface color dark-mode*/
+  background: var(--surface-color);
+  /*stroke color dark-mode*/
+  border: 1px solid var(--stroke-color);
+  /* border radius */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+
+}
+
+
+/*links*/
+ul {
+ list-style: none;
+
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+/* Define a cor padrão dos hyperlinks */
+a {
+  color: var(--text-color); /* Substitua 'blue' pela cor desejada */
+  text-decoration : none; /* Remove o sublinhado, se necessário */
+}
+ul li a {
+
+  /* Flexbox layout for centering content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Padding for spacing */
+  padding: 16px 24px;
+  /* Background color and border */
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: 0.1s;
+
+}
+
+/*Pseudo-selector */
+ul li a:hover {
+  background-color: var(--surface-hover-color);
+  border: 2.5px solid var(--text-color);
+} 
+/*Social links*/
+  #social-links {
+   display:flex;
+  justify-content: center;
+  gap: 32px;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+
+#social-links a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+
+  transition: 0.1s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color)
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  color: var(--text-color);
+}
